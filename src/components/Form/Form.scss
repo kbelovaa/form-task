@@ -1,0 +1,110 @@
+.form {
+  display: flex;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.648);
+    -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+    -o-transform: skew(-45deg);
+    transform: skew(-45deg);
+
+    @media screen and (max-width: 576px) {
+      -webkit-transform: skew(0deg);
+      -moz-transform: skew(0deg);
+      -o-transform: skew(0deg);
+      transform: skew(0deg);
+    }
+  }
+
+  &__input {
+    font-size: 16px;
+    width: 350px;
+    border: none;
+    background: none;
+    padding: 18px 30px 16px;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      font-size: 15px;
+      width: 250px;
+      padding: 15px 25px 13px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 14px;
+      width: 170px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgb(81, 81, 81);
+    }
+  }
+
+  &__button {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 18px 50px 16px;
+    background: none;
+    border: none;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      font-size: 15px;
+      padding: 15px 40px 13px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 14px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border: 1px solid #fff;
+      background-color: rgb(203, 17, 17);
+      -webkit-transform: skew(-45deg);
+      -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+      transform: skew(-45deg);
+      z-index: -1;
+      transition: all 0.2s ease-out;
+      -webkit-transition: all 0.2s ease-out;
+
+      @media screen and (max-width: 576px) {
+        -webkit-transform: skew(0deg);
+        -moz-transform: skew(0deg);
+        -o-transform: skew(0deg);
+        transform: skew(0deg);
+      }
+    }
+
+    &:hover::before {
+      background-color: rgb(114, 21, 21);
+    }
+  }
+
+  &__cart {
+    margin-left: 10px;
+  }
+}
